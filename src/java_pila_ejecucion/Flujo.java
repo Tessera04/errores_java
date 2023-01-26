@@ -15,8 +15,6 @@ public class Flujo {
 	
 	private static void metodo2() {
 		System.out.println("Inicio metodo2");
-		ArithmeticException ae = new ArithmeticException();
-		throw ae;
-		System.out.println("Fin metodo2");
+		throw new ArithmeticException();
 	}
 }
