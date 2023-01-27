@@ -9,12 +9,19 @@ public class Flujo {
 	
 	private static void metodo1() {
 		System.out.println("Inicio metodo1");
-		metodo2();
+		
+		try {
+			metodo2();
+		}catch (MiException me) {
+			me.printStackTrace();
+		}
+		
 		System.out.println("Fin metodo1");
 	}
 	
 	private static void metodo2() {
 		System.out.println("Inicio metodo2");
-		throw new ArithmeticException();
+		throw new MiException("Mi excepcion fue lanzada");
 	}
+	
 }
