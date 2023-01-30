@@ -5,10 +5,11 @@ public class testConexion {
 		Conexion con = new Conexion();
 		try {
 			con.leerDatos();
-			con.cerrar();
 		}catch (IllegalStateException ex){
 			System.out.println("Recibiendo exception");
 			ex.printStackTrace();
+		} finally {
+			con.cerrar();
 		}
 		
 	}
