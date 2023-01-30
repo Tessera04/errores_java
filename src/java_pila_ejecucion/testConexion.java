@@ -1,7 +1,16 @@
 package java_pila_ejecucion;
 
 public class testConexion {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		
+		try(Conexion con = new Conexion()){
+			con.leerDatos();
+		}catch (IllegalStateException ex){
+			System.out.println("Ejecutando catch");
+			ex.printStackTrace();
+		}
+		
+		/*
 		Conexion con = null;
 		try {
 			con = new Conexion();
@@ -9,8 +18,12 @@ public class testConexion {
 		}catch (IllegalStateException ex){
 			ex.printStackTrace();
 		} finally {
-			con.cerrar();
+			System.out.println("Ejecutando Finally");
+			if (con != null) {
+				con.cerrar();
+			}
 		}
 		
+		 */
 	}
 }
