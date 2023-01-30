@@ -6,7 +6,7 @@ public class TestCuentaExceptionChecked {
 		Cuenta cuenta = new Cuenta();
 		try {
 			cuenta.deposita();
-		} catch (MiException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
